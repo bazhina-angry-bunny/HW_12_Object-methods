@@ -4,7 +4,8 @@ public class Author {
     private String name;
     private String middleName;
     private String familyName;
-    //метод-конструктор для ФИО автора
+
+    //метод-конструктор для объекта Author
     public Author(String name, String middleName, String familyName){
         this.name = name;
         this.middleName = middleName;
