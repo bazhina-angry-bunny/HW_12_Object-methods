@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Author {
     private String name;
     private String middleName;
@@ -22,5 +24,17 @@ public class Author {
     }
     public String getFamilyName() {
         return familyName;
+    }
+    //сгенерировала методы equals() и hashCode()
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(name, author.name) && Objects.equals(middleName, author.middleName) && Objects.equals(familyName, author.familyName);
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, middleName, familyName);
     }
 }
